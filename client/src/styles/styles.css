@@ -1,0 +1,37 @@
+.employee-content{
+  margin:10px;
+}
+
+.navbar-expand-lg{
+    background-color: #284B63;
+}
+
+.navbar-brand {
+  color: white !important;
+}
+
+
+.navbar-collapse ul li a{
+  color: white;
+}
+
+.navbar-collapse ul li a:hover{
+  color: #5A94BC;
+  background: white;
+}
+
+.navbar-nav > li > .dropdown-menu {
+   background-color: #284B63; 
+  }
+
+#scroll-column {
+    height: 80%;
+    width: 20%;
+    position:fixed;
+    overflow-y: scroll;
+  }
+
+a{
+    text-decoration:none;
+    color: black;
+}

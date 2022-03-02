@@ -1,0 +1,3 @@
+exports.endpoints = {
+    sendNotification: "/sendNotification"
+}

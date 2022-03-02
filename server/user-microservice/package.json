@@ -1,0 +1,47 @@
+{
+  "name": "user-microservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test jest --coverage --detectOpenHandles ./test/*",
+    "pretest": "cross-env NODE_ENV=test npm run db:reset",
+    "db:reset": "cross-env NODE_ENV=test npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize db:seed:all --debug",
+    "db:create:test": "cross-env NODE_ENV=test npx sequelize-cli db:create",
+    "add-seeder-management": "cross-env NODE_ENV=test npx sequelize-cli seed:generate --name approvalRequest",
+    "run": "node .\\server.js",
+    "init": "npx sequelize-cli init  --force",
+    "migrate": "npx sequelize-cli db:migrate",
+    "create-model-employee": "npx sequelize-cli model:generate --name employee --attributes name:string,surname:string,username:string,email:string,password:string,positionName:string,isManager:boolean",
+    "create-model-management": "npx sequelize-cli model:generate --name management --attributes managerId:integer,employeeId:integer",
+    "create-model-enrollment": "npx sequelize-cli model:generate --name enrollment --attributes courseId:integer,employeeId:integer",
+    "create-model-approvalRequest": "npx sequelize-cli model:generate --name approvalRequest --attributes courseId:integer,employeeId:integer,requestTime:integer,status:integer,decisionTime:integer",
+    "create-course": "npx sequelize-cli model:generate --name course --attributes name:string,description:string,coverPhotoPath:string,duration:string,isLive:boolean,categoryId:integer"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "bcrypt": "5.0.1",
+    "cors": "2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "10.0.0",
+    "express": "4.17.1",
+    "express-validator": "6.12.1",
+    "helmet": "4.6.0",
+    "hpp": "0.2.3",
+    "jest": "^27.4.7",
+    "jsonwebtoken": "8.5.1",
+    "mongo-sanitize": "1.1.0",
+    "mongoose": "5.13.3",
+    "pg": "^8.7.1",
+    "sequelize": "^6.12.5",
+    "sequelize-cli": "^6.3.0",
+    "supertest": "^6.2.0",
+    "xss": "1.0.9"
+  },
+  "devDependencies": {
+    "express-mongo-sanitize": "^2.1.0",
+    "xss-clean": "^0.1.1"
+  }
+}

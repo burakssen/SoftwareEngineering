@@ -1,0 +1,41 @@
+{
+  "name": "user-microservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles --silent=false --coverage",
+    "start": "node --trace-warnings .\\server.js",
+    "init": "npx sequelize-cli init",
+    "create-course": "npx sequelize-cli model:generate --name course --attributes name:string,description:string,coverPhotoPath:string,duration:string,isLive:boolean,categoryId:integer",
+    "create-category": "npx sequelize-cli model:generate --name category --attributes name:string",
+    "create-link": "npx sequelize-cli model:generate --name link --attributes platform:string,meetingLink:string,meetingTime:date,capacity:integer,courseId:integer",
+    "create-vid-course-matching": "npx sequelize-cli model:generate --name videoCourseMatching --attributes order:integer,courseId:integer,videoId:integer",
+    "migrate": "npx sequelize-cli db:migrate"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "5.0.1",
+    "cors": "2.8.5",
+    "dotenv": "10.0.0",
+    "express": "4.17.1",
+    "express-validator": "^6.12.1",
+    "helmet": "4.6.0",
+    "hpp": "0.2.3",
+    "jest": "^27.4.7",
+    "jsonwebtoken": "8.5.1",
+    "mongo-sanitize": "1.1.0",
+    "mongoose": "5.13.3",
+    "nodemailer": "^6.7.2",
+    "pg": "^8.7.1",
+    "sequelize": "^6.12.2",
+    "sequelize-cli": "^6.3.0",
+    "supertest": "^6.2.1",
+    "xss": "1.0.9"
+  },
+  "devDependencies": {
+    "express-mongo-sanitize": "^2.1.0",
+    "xss-clean": "^0.1.1"
+  }
+}

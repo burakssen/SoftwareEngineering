@@ -1,0 +1,8 @@
+node_modules/
+server/user-microservice/node_modules/
+server/course-microservice/node_modules/
+server/streaming-microservice/node_modules/
+server/api-gateway/node_modules/
+client/node_modules
+/.idea/.gitignore
+./idea
